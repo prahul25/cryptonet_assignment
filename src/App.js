@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [info , setInfo] = useState([])
   useEffect(()=>{
-    fetch("https://randomuser.me/api/?page=1&results=1&seed=abc").then(response => response.json()).then(data => setInfo(data.results))
+    fetch("https://randomuser.me/api/?page=1&results=1&seed=abc").then(response => response.json()).then(data => setInfo(data.results)).catch(err => console.error(err))
   },[])
   console.log(info)
   return (
